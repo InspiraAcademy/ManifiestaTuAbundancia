@@ -11,12 +11,112 @@ body {
 
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
 
-#seccion1 {
-    /* El fondo es blanco o muy claro, no necesita background-color */
-    padding: 60px 20px;
-    /*font-family: 'Roboto', sans-serif;*/
-    color: #4C6572; /* Color principal de texto (gris azulado) */
+/* --- Estilos Base (Aplicados a todas las pantallas, incluyendo escritorio) --- */
+/* --- Estilos Base y para Tabletas (Ancho > 600px) --- */
+.promo-timer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #9ac6d3, #206d80);
+    color: white;
     text-align: center;
+    padding: 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    z-index: 9999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.timer {
+    font-weight: bold;
+    margin-left: 8px;
+    font-size: 1.25rem;
+}
+
+
+/* -------------------------------------------------------- */
+/* --- MEDIA QUERY: Móviles Generales (600px y menos) --- */
+/* -------------------------------------------------------- */
+
+@media (max-width: 600px) {
+    .promo-timer {
+        padding: 8px 0;
+        font-size: 0.9rem;
+        /* Aseguramos que se muestre en una línea, confiando en el JS para la brevedad */
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis;
+    }
+    .timer {
+        font-size: 1.0rem; 
+    }
+}
+
+/* -------------------------------------------------------- */
+/* --- MEDIA QUERY: Móviles MUY PEQUEÑOS (400px y menos) --- */
+/* -------------------------------------------------------- */
+
+@media (max-width: 400px) {
+    .promo-timer {
+        padding: 6px 0; /* Reducimos el padding vertical aún más */
+        font-size: 0.8rem; /* Reducimos la fuente al mínimo legible */
+    }
+    .timer {
+        /* Hacemos el contador más legible que el texto de la promoción */
+        font-size: 1.05rem; 
+    }
+}
+
+/* --- Nuevo MEDIA QUERY: Teléfonos MUY Estrechos (350px y menos) --- */
+
+@media (max-width: 350px) {
+    .promo-timer {
+        /* Máxima compresión vertical */
+        padding: 5px 2px; 
+        /* Fuente ultra pequeña, pero legible */
+        font-size: 0.75rem; 
+    }
+    .timer {
+        /* Aseguramos que el contador mantenga un tamaño decente */
+        font-size: 0.5rem; 
+    }
+}
+
+    #seccion1 {
+    /* **CLAVE 1: Imagen de Fondo para toda la sección** */
+    background-image: url('IMAGENES/fondo_sec1.png'); /* ¡CAMBIA ESTA RUTA! */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    /* Añadir altura mínima para que la imagen se vea */
+    min-height: 1000px; /* Puedes ajustar esto */
+    
+    /* Configuración para centrar el contenedor interno */
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    
+    padding: 0; /* Quitamos el padding aquí para que la imagen llegue a los bordes */
+    color: #4C6572; 
+    text-align: center;
+}
+
+.contenedor-transparente-interno {
+    /* Color de fondo blanco con 85% de opacidad (15% de transparencia) */
+    background-color: rgba(255, 255, 255, 0.678); 
+    
+    /* Asegurar que el contenido no se pegue a los bordes internos */
+    padding: 60px 20px; 
+    
+    /* Definir el ancho máximo del contenido */
+    max-width: 1000px;
+    width: 90%; /* Ocupa el 90% del ancho del padre */
+    
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
 /* Contenedor Flexbox para la imagen y el texto principal */
@@ -47,7 +147,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Asegura que la imagen cubra el círculo */
-    border-radius: 50%; /* CLAVE: Para hacer la imagen circular */
+    border-radius: 50%; 
     box-shadow: 0 0 0 10px rgba(76, 101, 114, 0.1); /* Sombra sutil para un mejor efecto */
 }
 
@@ -56,7 +156,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 1.8em;
     font-weight: 400;
-    color: #4C6572;
+    color: #253541;
     margin-bottom: 5px;
 }
 
@@ -66,7 +166,7 @@ body {
     font-size: 2.4em;
     font-weight: 700;
     line-height: 1.2;
-    color: #4C6572;
+    color: #143327;
     /* Reducir el interletrado para que se vea más ajustado, como en la imagen */
     letter-spacing: -0.5px; 
     margin-top: 0;
@@ -87,7 +187,7 @@ body {
 
 .parrafo1, .parrafo2 {
 
-    color: #486572; /* Texto más oscuro */
+    color: #213a38; /* Texto más oscuro */
 }
 
 /* Estilos para el texto destacado en la segunda línea */
@@ -135,7 +235,7 @@ body {
 /* Texto de la letra pequeña bajo el botón */
 .pie-boton {
     font-size: 0.7em;
-    color: #888888;
+    color: #40596e;
     margin-top: 10px;
     font-weight: 400;
 }
@@ -178,11 +278,13 @@ body {
 #seccion5,
 #seccion7 {
   color: #486572;
+
 }
 
 /* Botón de descarga - Sección 1 */
-#seccion1 .btn-redirigir {
-  background-color: #486572;  /* azul */
+
+/*#seccion1 .btn-redirigir {
+  background-color: #486572;  /* azul 
   color: white;
   padding: 15px 100px;
   border: none;
@@ -193,13 +295,13 @@ body {
 }
 
 .btn-redirigir:hover {
-  background-color: #1b3846; /* azul más oscuro al pasar el mouse */
-}
+  background-color: #1b3846; /* azul más oscuro al pasar el mouse 
+}*/
 
 /* Botón de descarga - Sección 2 */
-#seccion2 .btn-redirigir {
-  background-color: white;  /* azul */
-  color: #486572;
+#seccion2 .btn-redirigir-2 {
+  background-color: #445f6b;  /* azul */
+  color: #ffffff;
   padding: 15px 100px;
   border: none;
   border-radius: 10px;
@@ -208,7 +310,7 @@ body {
   transition: background-color 0.3s;
 }
 
-.btn-redirigir:hover {
+.btn-redirigir-2:hover {
   background-color: #1b3846; /* azul más oscuro al pasar el mouse */
 }
 
@@ -232,16 +334,13 @@ body {
 
 /* SECCION 2 */
 /* ---------------------------------------------------------------------- */
-/* Importar Google Fonts: Roboto para el cuerpo y una fuente para los títulos (Roboto Slab) */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
 
 /* 1. ESTILOS GENERALES DE LA SECCIÓN */
 #seccion2 {
-    /* Color de fondo gris azulado oscuro estructural */
-    background-color: #4C6572; 
     padding: 60px 20px;
     font-family: 'Roboto', sans-serif;
-    color: #ffffff;
+    color: #2a7061;
     text-align: center;
 }
 
@@ -249,64 +348,55 @@ body {
 .fila-superior {
     display: flex;
     justify-content: center;
-    max-width: 90%;
-    margin: 0 auto 50px auto; /* Espacio antes de la fila inferior */
+    /* CLAVE DE RESPONSIVIDAD: Usar un max-width flexible */
+    max-width: 1000px; 
+    width: 100%;
+    margin: 0 auto 50px auto;
 }
 
 .columna-intro {
-    flex: 1; /* Distribuye el espacio de manera uniforme */
-    padding: 0 30px;
+    flex: 1;
+    padding: 0 20px; /* Reducción de padding horizontal base */
     text-align: left;
 }
 
 .columna-intro h2 {
-    /*font-family: 'Roboto Slab', serif;*/
     font-size: 1.5em;
     font-weight: 700;
-    color: #ffffff; /* Título amarillo estructural */
+    color: #2a7061;
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 10px;
     padding-bottom: 5px;
-    border-bottom: 2px solid #5D7A8F; /* Línea separadora sutil */
+    border-bottom: 2px solid #5D7A8F;
 }
 
 .columna-intro p {
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.4;
-    max-width: 90%;
+    /* Eliminamos el max-width: 90% para que el navegador controle la reducción */
     margin-top: 0;
-    text-align: center;
-}
-
-/* Estilo para el ícono/estrella amarilla */
-/* En el diseño original, hay una estrella amarilla entre los títulos. 
-   Esto se puede simular con un pseudo-elemento si lo necesitas: */
-.columna-intro.derecha::before {
-    content: "\2605"; /* Código Unicode para una estrella */
-    color: #ffffff;
-    font-size: 2em;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) translateY(-60px); 
-    display: none; /* Ocultar por defecto si no lo quieres */
+    text-align: justify;
 }
 
 
 /* 3. FILA INFERIOR (Imagen y Lista de Beneficios) */
 .fila-inferior {
     display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Alinea los ítems de lista al inicio */
-    max-width: 80%;
+    justify-content: justify;
+    align-items: flex-start;
+    /* CLAVE DE RESPONSIVIDAD: Usar un max-width más amplio y flexible */
+    max-width: 1200px;
+    width: 90%; /* Asegura que no se pegue a los bordes */
     margin: 0 auto 50px auto;
 }
 
-/* Estilo del contenedor del libro (Ventana del avión) */
 .libro-contenedor {
     flex-shrink: 0;
-    width: 380px; /* Ancho fijo para la imagen */
+    /* QUITAMOS EL ANCHO FIJO (380px) para que se ajuste */
+    max-width: 350px; 
+    width: 40%; /* Le damos un porcentaje de ancho en escritorio */
     margin-right: 50px;
 }
 
@@ -316,21 +406,20 @@ body {
     display: block;
 }
 
-/* Estilo de la lista de beneficios (Derecha) */
 .columna-lista {
     flex: 1;
-    text-align: center;
-    padding-top: 10px; /* Alineación visual con la imagen */
+    text-align: left; /* Alineamos a la izquierda para mejor lectura de la lista */
+    justify-content: justify;
+    max-width: 60%; 
+    padding-top: 10px;
 }
 
 .columna-lista h3 {
-    /* El "ESTO ES PARA TI" se repite como en la imagen, pero lo ocultamos o estilizados diferente */
     display: none; 
 }
 
-/* Estilo de la lista */
 .columna-lista ul {
-    list-style: none; /* Quitar viñetas por defecto */
+    list-style: none;
     padding-left: 0;
     margin: 0;
 }
@@ -338,16 +427,16 @@ body {
 .columna-lista li {
     font-size: 1.2em;
     font-weight: 300;
-    line-height: 1.3;
+    line-height: 1.5; /* Aumentamos line-height para legibilidad */
     margin-bottom: 15px;
     position: relative;
-    padding-left: 20px; /* Espacio para la viñeta personalizada */
+    padding-left: 20px;
+    text-align: left; /* Asegura que cada ítem se alinee a la izquierda */
 }
 
-/* Viñetas personalizadas (Guiones como en la imagen) */
 .columna-lista li::before {
-    content: "–"; /* Usar un guión como viñeta */
-    color: #ffffff; 
+    content: "–";
+    color: #2a7061;
     font-size: 1.2em;
     font-weight: 700;
     position: absolute;
@@ -355,20 +444,18 @@ body {
     top: 0;
 }
 
-/* Estilo para texto destacado en la lista */
 .columna-lista li b {
     font-weight: 700;
-    color: #ffffff; /* Negrita en color amarillo */
+    color: #2a7061;
 }
 
-
-/* 4. BOTÓN Y PIE DE PÁGINA (Reutiliza clases de la sección anterior) */
-
-.btn-redirigir {
+/* 4. BOTÓN Y PIE DE PÁGINA */
+.btn-redirigir-2 {
+    /* Mantenemos tus estilos de botón */
     display: inline-flex;
     align-items: center;
     background-color: #5D7A8F; 
-    color: #ffffff;
+    color: #2a7061;
     padding: 15px 45px;
     border: none;
     border-radius: 8px;
@@ -379,49 +466,354 @@ body {
     text-transform: uppercase;
     transition: background-color 0.3s ease;
     letter-spacing: -0.2px; 
-    margin-top: 10px; /* Separación de la lista */
+    margin-top: 10px;
 }
 
 .pie-boton {
-    font-size: 0.7em;
-    color: #fff9f9; /* Gris más claro */
+    font-size: 0.85em; /* Aumentamos un poco para mejor lectura */
+    color: #2a7061;
     margin-top: 10px;
     font-weight: 400;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.2px;
 }
 
-/* Media Queries para Responsividad */
+
+/* ---------------------------------------------------------------------- */
+/* --- MEDIA QUERIES (Responsividad) --- */
+/* ---------------------------------------------------------------------- */
+
+/* Tabletas Grandes / Laptops Pequeñas (Max 992px) */
 @media (max-width: 992px) {
+    /* FILA INFERIOR: Apilar elementos (Libro arriba, lista abajo) */
     .fila-inferior {
         flex-direction: column;
         align-items: center;
+        width: 90%; /* Asegura que siga ocupando un buen ancho */
     }
     .libro-contenedor {
+        width: 50%; /* Le damos más ancho para que se vea más grande en tablet */
+        max-width: 300px; 
         margin-right: 0;
         margin-bottom: 30px;
     }
     .columna-lista {
-        padding-left: 20px;
-        padding-right: 20px;
+        max-width: 100%; /* Permite que la lista ocupe todo el ancho */
+        padding: 0 10px; /* Reducimos el padding */
+    }
+    .columna-lista li {
+        font-size: 1.1em; /* Reducimos el tamaño de la lista */
     }
 }
 
+/* Teléfonos y Tabletas Pequeñas (Max 768px) */
 @media (max-width: 768px) {
+    /* FILA SUPERIOR: Apilar títulos (izquierda/derecha) */
     .fila-superior {
         flex-direction: column;
+        width: 100%;
+        max-width: none; /* Quitamos el max-width para que use todo el espacio */
     }
     .columna-intro {
         padding: 0 10px;
         margin-bottom: 20px;
     }
+    .columna-intro h2 {
+        font-size: 1.3em;
+    }
+    .columna-intro p {
+        font-size: 1em; /* Reducimos el texto principal */
+    }
+    
+    /* FILA INFERIOR */
     .libro-contenedor {
-        width: 100%;
-        max-width: 300px;
+        width: 80%; /* Aseguramos que la imagen no sea gigante */
+        max-width: 250px;
+    }
+    .columna-lista li {
+        font-size: 1em; /* Reducción final del texto de la lista */
+    }
+    
+    /* BOTÓN */
+    .btn-redirigir-2 {
+        font-size: 1.2em; /* Reducimos el tamaño del botón para que quepa */
+        padding: 12px 30px;
+    }
+    .pie-boton {
+        font-size: 0.75em;
     }
 }
 
 
 /* SECCION 3 */
+/* Columna de la derecha (Carrusel) */
+
+/* SECCION 3: ESTILOS BASE (Desktop) */
+
+.fondo-testimonio {
+    background-color:#4f8b91 ;
+    display: flex;
+    /* CLAVE 1: Eliminamos 'Para que ocupe toda la altura de la pantalla'. Usamos min-height */
+    min-height: 550px; /* Una altura mínima para desktop que se vea bien */
+    color: white;
+    padding: 60px 20px; /* Más padding para espacio */
+}
+
+/* Columna de la izquierda (Texto) */
+.columna-izquierda-t {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Columna de la derecha (Carrusel) */
+.columna-derecha-t {
+    width: 50%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px;
+}
+
+/* Contenedor del Carrusel */
+#carrusel-tarjetas {
+    position: relative;
+    width: 100%;
+    max-width: 450px; 
+    /* CLAVE 2: Reducimos la altura base para hacerlo más compacto, si no lo hiciste antes */
+    height: 350px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+/* Estilos base de cada tarjeta (Ajustamos para que el texto fluya mejor) */
+.tarjeta {
+    position: absolute;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    color: #333;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    
+    display: flex;
+    /* Ajustamos el layout de la tarjeta para que el perfil y el texto se organicen sin forzar space-between */
+    justify-content: flex-start;
+    align-items: flex-start; 
+    gap: 15px;
+    
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    min-height: 150px;
+}
+
+/* Estilos del Perfil */
+.perfil {
+    display: flex;
+    align-items: flex-start; /* Alineamos arriba */
+    gap: 15px;
+    width: 100%; /* El perfil ocupa todo el ancho de la tarjeta */
+}
+
+.perfil img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0; /* Evita que la imagen se encoja */
+}
+
+.perfil .info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.perfil strong {
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.perfil span {
+    font-size: 0.95em; /* Ligeramente más grande para mejor lectura */
+    color: #555; /* Oscurecemos para mejor contraste */
+    line-height: 1.4;
+    margin-top: 5px;
+}
+
+
+/* --- CLASES DE ESTADO (Ajustamos el desplazamiento para la nueva altura base) --- */
+
+.tarjeta.central {
+    opacity: 1;
+    transform: translateY(0) scale(1.05);
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.tarjeta.arriba {
+    opacity: 0.3; 
+    /* CLAVE 3: Reducimos el desplazamiento a 70px (antes 100px) */
+    transform: translateY(-70px) scale(0.9); 
+    z-index: 5;
+    pointer-events: none;
+}
+
+.tarjeta.abajo {
+    opacity: 0.3; 
+    /* CLAVE 3: Reducimos el desplazamiento a 70px (antes 100px) */
+    transform: translateY(70px) scale(0.9); 
+    z-index: 5;
+    pointer-events: none;
+}
+
+.tarjeta.oculto {
+    opacity: 0;
+    transform: translateY(200px) scale(0.8);
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------------------- */
+/* --- MEDIA QUERY: Responsividad para Tabletas y Móviles (Max 900px) --- */
+/* ---------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+    /* APILAMIENTO GENERAL (Sin cambios) */
+    .fondo-testimonio {
+        flex-direction: column; 
+        min-height: auto; 
+        padding: 40px 0;
+    }
+    .columna-izquierda-t, 
+    .columna-derecha-t {
+        width: 100%;
+        padding: 0 20px;
+        margin-bottom: 20px;
+    }
+    .columna-izquierda-t h1 {
+        font-size: 2em; 
+        margin-bottom: 10px;
+    }
+    
+    /* AJUSTE CLAVE: Contenedor del Carrusel */
+    #carrusel-tarjetas {
+        /* Altura más agresiva para móvil */
+        height: 220px; /* Reducido a 240px (antes 250px) */
+        max-width: 90%; 
+    }
+
+    /* AJUSTE CLAVE: Tarjeta Individual (Cuadro Blanco) */
+    .tarjeta {
+        /* CLAVE 1: Reducimos el padding vertical al mínimo */
+        padding: 10px 15px; 
+        /* CLAVE 2: Reducimos la altura mínima de la tarjeta */
+        min-height: 110px; /* Reducido a 110px (antes 120px) */
+    }
+
+    /* AJUSTE CLAVE: Elementos de Perfil */
+    .perfil {
+        /* CLAVE 3: Usamos align-items: center para centrar la imagen y el nombre */
+        align-items: center; 
+    }
+    .perfil img {
+        /* CLAVE 4: Reducimos la imagen de perfil */
+        width: 40px; 
+        height: 40px;
+    }
+    
+    .perfil strong {
+        font-size: 0.9em;
+    }
+    .perfil span {
+        font-size: 0.8em; 
+        line-height: 1.2; /* Reducción máxima del interlineado */
+        margin-top: 2px;
+    }
+
+    /* AJUSTE CLAVE: Desplazamiento (Ajustado para caber en 240px) */
+    .tarjeta.central {
+        transform: translateY(0) scale(1); 
+    }
+
+    .tarjeta.arriba {
+        /* CLAVE 5: Reducimos el desplazamiento */
+        transform: translateY(-40px) scale(0.95); 
+    }
+    .tarjeta.abajo {
+        /* CLAVE 5: Reducimos el desplazamiento */
+        transform: translateY(40px) scale(0.95); 
+    }
+}
+
+@media (max-width: 500px) {
+    /* AJUSTE CLAVE: Contenedor del Carrusel */
+    #carrusel-tarjetas {
+        /* CLAVE 1: Aumentamos la altura de nuevo (de 220px a 270px) para asegurar que el texto quepa, 
+                   pero es aún más compacta que la original de 350px/280px. */
+        height: 270px; 
+        max-width: 95%; 
+    }
+
+    /* AJUSTE CLAVE: Tarjeta Individual (El cuadro blanco) */
+    .tarjeta {
+        /* CLAVE 2: Reducimos el padding al mínimo, pero le damos suficiente espacio al texto */
+        padding: 10px 15px; 
+        /* CLAVE 3: Reducimos la altura mínima para que se ajuste al contenido corto */
+        min-height: 50px; 
+    }
+    
+    /* AJUSTE CLAVE: Tarjeta Central (Visible) */
+    .tarjeta.central {
+        /* CLAVE 4: Reducimos el scale de 1.05 a 1.0 para ahorrar espacio */
+        transform: translateY(0) scale(1.0); 
+    }
+
+    /* Elementos de Perfil */
+    .perfil {
+        align-items: center; 
+    }
+    .perfil img {
+        width: 40px; 
+        height: 40px;
+    }
+    
+    .perfil strong {
+        font-size: 0.9em;
+    }
+    .perfil span {
+        /* CLAVE 5: Reducimos el tamaño y line-height del texto para que quepa */
+        font-size: 0.8em; 
+        line-height: 1.2;
+        margin-top: 2px;
+    }
+
+    /* Desplazamiento (Adaptado a 270px de altura del carrusel) */
+    .tarjeta.arriba {
+        /* CLAVE 6: Desplazamiento ajustado a la nueva altura */
+        transform: translateY(-50px) scale(0.9); 
+    }
+    .tarjeta.abajo {
+        /* CLAVE 6: Desplazamiento ajustado a la nueva altura */
+        transform: translateY(50px) scale(0.9); 
+    }
+    
+    /* Ajuste del título */
+    .columna-izquierda-t h1 {
+        font-size: 1.8em;
+    }
+}
+
+
+
+
+
+
+
+/* SECCION 3 - IMAGEN + TEXTO */
 #seccion3 {
     background-color: #f8f8f8;
     padding: 30px 20px; /* Aumenta el padding para un mejor espacio en móviles */
@@ -507,6 +899,7 @@ body {
     font-size: 1rem; /* Reducido para móviles */
     line-height: 1.5;
     font-style: italic;
+    text-align: justify;
 }
 
 .post-data {
@@ -570,7 +963,7 @@ body {
 /* SECCION 4 */
 /* ---------------------------------------------------------------------- */
 #seccion4 {
-    background-color: #476672;
+    background-color: #87A0A5;
     color: #fff;
     font-family: Arial, sans-serif;
     padding: 40px 20px; /* Aumenta el padding para una mejor separación */
@@ -618,6 +1011,7 @@ body {
     font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 5px;
+    text-align: justify;
 }
 
 .precio {
@@ -641,6 +1035,7 @@ body {
 
     .regalo-texto {
         text-align: left; /* Restablece la alineación a la izquierda */
+        gap: 15px;
     }
 
     /* Asegura que el texto alineado a la izquierda esté en el lado correcto */
@@ -677,6 +1072,7 @@ body {
 #seccion5 > p { /* Contenido de la quinta sección. */
     margin-bottom: 40px;
 }
+
 
 /* 🌟 Diseño de las 3 columnas con Flexbox 🌟 */
 .garantia-flex-wrapper {
@@ -754,9 +1150,9 @@ body {
 
 /* ESTILO DE LA SECCIÓN EXTERNA (FONDO OSCURO) */
 #seccion-resumen-forma {
-    background-color: #486572; /* Fondo estructural */
+    background-color: #4f8b91; /* Fondo estructural */
     padding: 50px 20px;
-    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Roboto', sans-serif;*/
     color: #ffffff;
     text-align: center;
 }
@@ -806,9 +1202,11 @@ body {
 .item-principal-forma,
 .regalo-item-forma,
 .otros-beneficios-forma {
-    font-size: 1em;
+    font-size: 0.8em;
     line-height: 1.5;
-    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    justify-items: center;
+    /*font-family: 'Roboto Slab', serif;*/
     font-weight: 400;
     margin-bottom: 5px;
     margin-top: 0;
@@ -829,10 +1227,10 @@ body {
 
 .valor-total-v2 {
     /*font-family: 'Roboto Slab', serif;*/
-    font-size: 1.9em;
+    font-size: 1.2em;
     font-weight: 700;
     letter-spacing: -0.5px;
-    color: #ff1900; /* Rojo estructural */
+    color: #bb3a2b; /* Rojo estructural */
     margin: 0;
     padding: 0;
 }
@@ -851,14 +1249,14 @@ body {
     font-family: 'Roboto Slab', serif;
     font-size: 2.8em;
     font-weight: 700;
-    color: #69d46d; /* Verde estructural */
+    color: #3a9659; /* Verde estructural */
     margin: 0;
     padding: 0;
 }
 
 /* 🌟 BARRA AMARILLA (El cambio estructural) 🌟 */
 .barra-amarilla-v2 {
-    background-color: #fde800; /* Color amarillo estructural */
+    background-color: #98b9af; /* Color amarillo estructural */
     width: calc(98% + 40px); /* Ocupa el ancho total del contenedor + el padding (20px a cada lado) */
     margin-left: -10px; /* Lo mueve hacia la izquierda para que ocupe todo el ancho */
     padding: 1px 0;
@@ -940,28 +1338,65 @@ body {
 
 /* Estilo de la sección principal (Fondo y fuente base) */
 #seccion7 {
-    /* Color de fondo gris azulado oscuro estructural */
     background-color: #4C6572; 
     padding: 60px 20px;
     font-family: 'Roboto', sans-serif;
-    color: #ffffff; /* Color de texto claro */
-    text-align: center; /* Centrar todo el contenido */
-    max-width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+    color: #ffffff;
+    text-align: center;
+    max-width: 100%;
 }
 
-/* Estilo del título principal (Preguntas frecuentes) */
+/* Media query para tablets */
+@media (max-width: 768px) {
+    #seccion7 {
+        padding: 40px 15px;
+    }
+}
+
+/* Media query para móviles */
+@media (max-width: 480px) {
+    #seccion7 {
+        padding: 30px 10px;
+    }
+}
+
 #seccion7 h2 {
-    /*font-family: 'Caveat', cursive; /* Fuente cursiva */
     font-size: 2.5em;
     letter-spacing: -1px;
-    font-weight: 400; /* Peso normal/ligero */
+    font-weight: 400;
     margin-bottom: 30px;
     color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    #seccion7 h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #seccion7 h2 {
+        font-size: 1.6em;
+        margin-bottom: 15px;
+    }
 }
 
 #seccion7 h3{
     font-size:1.5em;
     letter-spacing: -1px;
+}
+
+@media (max-width: 768px) {
+    #seccion7 h3 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    #seccion7 h3 {
+        font-size: 1.1em;
+    }
 }
 
 #seccion7 p{
@@ -973,51 +1408,338 @@ body {
     margin-bottom: 30px;
 }
 
-/* Estilo de las Preguntas */
-/* Seleccionamos los párrafos impares que contienen las preguntas */
+@media (max-width: 768px) {
+    #seccion7 p {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #seccion7 p {
+        font-size: 1em;
+        margin-bottom: 15px;
+        max-width: 95%;
+    }
+}
+
 #seccion7 h3:nth-child(odd) {
-    font-family: 'Caveat', cursive; /* Fuente cursiva para las preguntas */
+    font-family: 'Caveat', cursive;
     font-size: 1.8em;
-    font-weight: 900; /* Ligeramente más grueso */
+    font-weight: 900;
     color: #ffffff;
-    margin-top: 30px; /* Espacio antes de la pregunta */
-    margin-bottom: 5px; /* Poco espacio con la respuesta */
+    margin-top: 30px;
+    margin-bottom: 5px;
 }
 
-/* Estilo de las Respuestas */
-/* Seleccionamos los párrafos pares que contienen las respuestas */
-#seccion7 p:nth-child(even) {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1em;
-    font-weight: 300; /* Texto ligero y fácil de leer */
+@media (max-width: 768px) {
+    #seccion7 h3:nth-child(odd) {
+        font-size: 1.5em;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #seccion7 h3:nth-child(odd) {
+        font-size: 1.3em;
+        margin-top: 15px;
+    }
+}
+
+/* --- Variables y Estilos Base de la Sección --- */
+.faq-section {
+    padding: 60px 20px;
+    background-color: #F4EFEB;
+    font-family: 'Arial', sans-serif; 
+}
+
+/* Media query para reducir padding en tablets */
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 40px 15px;
+    }
+}
+
+/* Media query para reducir padding en móviles */
+@media (max-width: 480px) {
+    .faq-section {
+        padding: 30px 10px;
+    }
+}
+
+.faq-title {
+    font-size: 2.5em;
+    font-weight: 800; 
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .faq-title {
+        font-size: 2em;
+        margin-bottom: 30px;
+        letter-spacing: 0.5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-title {
+        font-size: 1.5em;
+        margin-bottom: 25px;
+        letter-spacing: 0.3px;
+    }
+}
+
+/* --- Estilos del Contenedor de Preguntas --- */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .faq-container {
+        max-width: 100%;
+    }
+}
+
+/* Estilos base de cada Pregunta/Respuesta */
+.faq-item {
+    margin-bottom: 0;
+    border-radius: 0;
+    overflow: hidden; 
+    
+}
+
+/* Estilo para la pregunta (la barra que siempre está visible) */
+.faq-question {
+    padding: 18px 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.1em;
+    color: #333;
+    transition: background-color 0.3s;
+    border-top: 1px solid #e0e0e0;
+}
+
+@media (max-width: 768px) {
+    
+    .faq-question {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-question {
+        padding: 12px 15px;
+        font-size: 0.95em;
+    }
+}
+
+/* Redondear la primera pregunta */
+.faq-item:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-top: none;
+}
+
+/* Estilo del ícono (Flecha o Símbolo de Chevron) */
+.faq-question::after {
+    content: '⌵'; 
+    font-size: 1.2em;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+    color: #87A0A5; 
+}
+
+@media (max-width: 480px) {
+    .faq-question::after {
+        font-size: 1em;
+    }
+}
+
+/* --- ESTADO ACTIVO/EXPANDIDO --- */
+
+/* La pregunta abierta (Morada) */
+.faq-item.active .faq-question {
+    background-color: #3D5C5F; 
+    color: white; 
+    border-top: none; 
+}
+
+/* El ícono de la pregunta activa debe rotar */
+.faq-item.active .faq-question::after {
+    content: '∧'; 
+    color: white;
+}
+
+/* Estilo para la respuesta (el texto que se oculta/muestra) */
+.faq-answer {
+    padding: 0 25px;
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    background-color: white; 
     line-height: 1.6;
-    max-width: 800px; /* Limitar el ancho de la respuesta para mejorar la lectura */
-    margin-left: auto; /* Centrar el bloque de texto */
-    margin-right: auto;
-    margin-bottom: 30px; /* Espacio después de la respuesta */
-    padding: 0 10px; /* Pequeño padding horizontal */
+    font-size: 0.95em;
+    color: #555;
+    border-bottom: 1px solid #e0e0e0; 
 }
 
-/* Estilo específico para los pasos de acceso (si son parte del párrafo) */
-/* Si el contenido de la respuesta tiene líneas separadas (como tu ejemplo de "Cómo acceder...") */
-#seccion7 p:nth-child(even) br {
-    display: none; /* Ocultar posibles saltos de línea si se usa <br> */
+@media (max-width: 768px) {
+    .faq-answer {
+        padding: 0 20px;
+        font-size: 0.9em;
+    }
 }
 
-/* Si tu HTML tuviera más de 3 preguntas (que es lo que muestras en el HTML original),
-   este código funcionará para todas las preguntas y respuestas: */
-
-/* Ajuste para las líneas dentro de la respuesta de "Cómo acceder al producto?" (si están en un solo <p>) */
-#seccion7 p:nth-child(even):nth-last-of-type(4) { 
-    text-align: center; /* Centrar el texto para la respuesta que contiene la lista de pasos */
+@media (max-width: 480px) {
+    .faq-answer {
+        padding: 0 15px;
+        font-size: 0.85em;
+        line-height: 1.5;
+    }
 }
 
-#seccion7 .pie-boton {
-    font-size: 11px;
+/* Mostrar la respuesta cuando el item está activo */
+.faq-item.active .faq-answer {
+    max-height: 300px; 
+    padding: 20px 25px 25px; 
+}
+
+@media (max-width: 768px) {
+    .faq-item.active .faq-answer {
+        padding: 15px 20px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-item.active .faq-answer {
+        padding: 12px 15px 15px;
+    }
+}
+
+/* Redondear la respuesta del último item para cerrar el contenedor */
+.faq-item:last-child .faq-answer {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.faq-item.active:last-child .faq-answer {
+    border-bottom: none;
+}
+
+.boton3{
+    max-width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .boton3 {
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .boton3 {
+        margin-top: 20px;
+    }
+}
+
+.btn-redirigir-3 {
+    display: inline-flex;
+    align-items: center;
+    background-color: #4C6572;
     color: #ffffff;
-    margin-top: 10px;
-
+    padding: 15px 35px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    letter-spacing: -0.2px; 
 }
+
+@media (max-width: 768px) {
+    .btn-redirigir-3 {
+        padding: 12px 28px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-redirigir-3 {
+        padding: 12px 20px;
+        font-size: 0.9em;
+        width: 90%;
+        justify-content: center;
+    }
+}
+
+.btn-redirigir-3:hover {
+    background-color: #5D7A8F;
+}
+
+.btn-redirigir-3 i {
+    margin-left: 10px;
+    font-size: 1.2em;
+}
+
+@media (max-width: 480px) {
+    .btn-redirigir-3 i {
+        margin-left: 8px;
+        font-size: 1em;
+    }
+}
+
+.pie-boton {
+    font-size: 11px;
+    color: #333;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+    .pie-boton {
+        font-size: 10px;
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pie-boton {
+        font-size: 9px;
+        margin-top: 8px;
+        line-height: 1.4;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*SECCION 8*/
 /* Importar Google Fonts: Usamos una combinación que se asemeje al estilo limpio y legible de la imagen */
@@ -1029,7 +1751,7 @@ body {
     background-color: #F9F7F4; 
     padding: 80px 20px;
     font-family: 'Roboto', sans-serif;
-    color: #000000; /* Color de texto oscuro */
+    color: #ffffff; /* Color de texto oscuro */
     text-align: center;
     border-bottom: 2px solid #D7C3C5; /* Línea separadora inferior sutil */
 }
@@ -1038,7 +1760,7 @@ body {
 #seccion8 p {
     /*font-family: 'Roboto', sans-serif;*/
     font-weight: 300; /* Texto más ligero para un toque personal */
-    font-size: 1.3em; /* Tamaño de fuente grande y cómodo de leer */
+    font-size: 1.1em; /* Tamaño de fuente grande y cómodo de leer */
     line-height: 1.4; /* Alto interlineado para la sensación de espaciado */
     max-width: 850px; /* Limitar el ancho para que parezca un bloque centrado de lectura */
     margin: 0 auto; /* Centrar el bloque de texto */
@@ -1050,30 +1772,21 @@ body {
 #seccion8 p b {
     /*font-family: 'Roboto Slab', serif; /* Usamos una fuente serif para destacar */
     font-weight: 700;
-    font-size: 1em; /* Ligeramente más grande que el texto base */
+    font-size: 1.3em; /* Ligeramente más grande que el texto base */
     line-height: 1.8;
     letter-spacing: -0.8px;
-    color: #000000; /* Color borgoña/marrón oscuro para la frase destacada */
+    color: #ffffff; /* Color borgoña/marrón oscuro para la frase destacada */
     display: block; /* Para que ocupen su propia línea y tengan espacio */
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-/* Estilo para la firma (Te ama, la abu.) */
-#seccion8 p b:last-of-type {
-    display: block;
-    font-size: 1.3em; /* Hacemos la firma más grande */
-    margin-top: 40px; /* Separación considerable del texto anterior */
-    margin-bottom: 0;
-    color: #000000; /* Color de texto principal */
-    font-style: italic; /* Añadir un toque cursivo */
-}
 
 /*FOOTER*/
 /* Estilo del Pie de Página (Footer) */
 footer {
     /* Color de fondo gris azulado oscuro estructural, similar a la sección anterior */
-    background-color: #4C6572; 
+    background-color: #424242; 
     font-family: 'Roboto', sans-serif;
     color: #ffffff;
     text-align: center;
@@ -1109,20 +1822,74 @@ footer {
     margin-bottom: 3px;
 }
 
-/* Espacio reservado para el logo de "Funciona con systeme.io" si lo deseas agregar */
-/* Puedes usar posicionamiento absoluto o flexbox si necesitas ese logo en la esquina */
-/* Si no lo necesitas, este CSS es suficiente. */
+/* Botones red sociales */
+
+.social-icons {
+    display: flex;
+    gap: 20px; /* Space between icons */
+    padding: 20px;
+    justify-content: center;
+}
+
+.icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white; /* Default icon color will be white */
+    text-decoration: none;
+    font-size: 24px; /* Icon size */
+    transition: transform 0.3s ease; /* Simple hover animation */
+}
+
+.icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Fondo de íconos --- */
+
+/* Facebook*/
+.facebook {
+    background-color: #1877F2;
+}
+
+/* YouTube */
+.youtube {
+    background-color: #FF0000;
+}
+
+/* Instagram*/
+.instagram {
+    /* Instagram's official gradient colors */
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    /* Set icon color to white for better contrast */
+    color: white; 
+}
+
+/* TikTok - fondo y letra*/
+.tiktok {
+    background-color: #000000;
+}
+
+.tiktok i {
+    text-shadow: 2px 0px 0px #25F4EE, -2px 0px 0px #FF4E74;
+}
+
+
 
 
 /* Colores para identificar secciones */
-#seccion1 { background: #F4EFEB; }
-#seccion2 { background: #486572; }
+/*#seccion1 { background: #F4EFEB; }*/
+#seccion2 { background: #F4EFEB; }
 #seccion3 { background: #F4EFEB; }
-#seccion4 { background: #486572; }
+#seccion4 { background: #4f8b91 }
 #seccion5 { background: #F4EFEB; }
-#seccion6 { background: #486572; }
-#seccion7 { background: #486572; }
-#seccion8 { background: #F4EFEB; }
+#seccion6 { background: ; }
+#seccion7 { background: #87A0A5; }
+#seccion8 { background: #87A0A5; }
 
 /* ----------- RESPONSIVE ----------- */
 

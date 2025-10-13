@@ -208,9 +208,9 @@ body {
 .btn-redirigir {
     display: inline-flex;
     align-items: center;
-    background-color: #4C6572; /* Color de fondo del botón estructural */
+    background-color: #EFB810; /* Color de fondo del botón estructural */
     color: #ffffff;
-    padding: 15px 35px;
+    padding: 20px 105px;
     border: none;
     border-radius: 8px;
     font-family: 'Roboto', sans-serif;
@@ -224,7 +224,7 @@ body {
 }
 
 .btn-redirigir:hover {
-    background-color: #5D7A8F;
+    background-color: #db8f01;
 }
 
 .btn-redirigir i {
@@ -233,9 +233,9 @@ body {
 }
 
 /* Texto de la letra pequeña bajo el botón */
-.pie-boton {
-    font-size: 0.7em;
-    color: #40596e;
+#seccion1 .pie-boton {
+    font-size: 0.8em;
+    color: #19232b;
     margin-top: 10px;
     font-weight: 400;
 }
@@ -300,18 +300,18 @@ body {
 
 /* Botón de descarga - Sección 2 */
 #seccion2 .btn-redirigir-2 {
-  background-color: #445f6b;  /* azul */
+  background-color: #EFB810;  /* azul */
   color: #ffffff;
-  padding: 15px 100px;
+  padding: 15px 105px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 20px;
   transition: background-color 0.3s;
 }
 
-.btn-redirigir-2:hover {
-  background-color: #1b3846; /* azul más oscuro al pasar el mouse */
+#seccion2 .btn-redirigir-2:hover {
+  background-color: #db8f01; /* azul más oscuro al pasar el mouse */
 }
 
 /* Imágen - seccion 1 */
@@ -331,6 +331,19 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
+.contenido-resumen-forma-v2 a{
+  background-color: #f1c500;  /* azul */
+  color: #ffffff;
+  padding: 10px 105px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s;
+}
+.contenido-resumen-forma-v2 a:hover {
+  background-color: #db8f01; /* azul más oscuro al pasar el mouse */
+}
 
 /* SECCION 2 */
 /* ---------------------------------------------------------------------- */
@@ -1656,9 +1669,9 @@ body {
 .btn-redirigir-3 {
     display: inline-flex;
     align-items: center;
-    background-color: #4C6572;
+    background-color: #EFB810;
     color: #ffffff;
-    padding: 15px 35px;
+    padding: 15px 105px;
     border: none;
     border-radius: 8px;
     font-family: 'Roboto', sans-serif;
@@ -1669,6 +1682,11 @@ body {
     transition: background-color 0.3s ease;
     letter-spacing: -0.2px; 
 }
+
+.btn-redirigir-3:hover {
+  background-color: #db8f01; /* azul más oscuro al pasar el mouse */
+}
+
 
 @media (max-width: 768px) {
     .btn-redirigir-3 {
@@ -1687,7 +1705,7 @@ body {
 }
 
 .btn-redirigir-3:hover {
-    background-color: #5D7A8F;
+    background-color: #db8f01;
 }
 
 .btn-redirigir-3 i {
@@ -1703,7 +1721,7 @@ body {
 }
 
 .pie-boton {
-    font-size: 11px;
+    font-size: 0.8em;
     color: #333;
     margin-top: 10px;
     padding: 0 10px;
@@ -1760,7 +1778,7 @@ body {
 #seccion8 p {
     /*font-family: 'Roboto', sans-serif;*/
     font-weight: 300; /* Texto más ligero para un toque personal */
-    font-size: 1.1em; /* Tamaño de fuente grande y cómodo de leer */
+    font-size: 1.2em; /* Tamaño de fuente grande y cómodo de leer */
     line-height: 1.4; /* Alto interlineado para la sensación de espaciado */
     max-width: 850px; /* Limitar el ancho para que parezca un bloque centrado de lectura */
     margin: 0 auto; /* Centrar el bloque de texto */

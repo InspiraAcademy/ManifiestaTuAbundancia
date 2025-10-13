@@ -61,6 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // 2. Configurar la rotación automática cada 6 segundos
-    setInterval(rotateCarrusel, 6000); // 6000ms = 6 segundos
+    setInterval(rotateCarrusel, 2000); // 6000ms = 6 segundos
     
 });

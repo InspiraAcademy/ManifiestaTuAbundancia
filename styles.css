@@ -872,6 +872,8 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Añadido un pequeño shadow */
 }
 
+
+
 /* --- ESTILOS DE AUTORA (FILA INFERIOR) --- */
 .autora-contenedor {
     display: flex;
@@ -932,6 +934,12 @@ body {
     .testimonio {
         width: auto;
         flex-basis: calc(33.333% - 20px); /* Ejemplo para tres columnas, ajusta si es necesario */
+    }
+    .fila-superior{
+        margin-bottom: 1px;
+    }
+    .fila-inferior{
+        margin-top: 1px;
     }
 
     /* --- Autora --- */

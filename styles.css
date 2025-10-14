@@ -559,7 +559,7 @@
   
   /* === SECCIÓN 3 - TESTIMONIOS === */
   .fondo-testimonio {
-      background-color:#4f8b91;
+      background-color:#41777c;
       display: flex;
       min-height: 550px;
       color: white;
@@ -944,7 +944,7 @@
   
   /* === SECCIÓN 4 === */
   #seccion4 {
-      background-color: #4f8b91;
+      background-color: #3e757a;
       color: #fff;
       font-family: Arial, sans-serif;
       padding: 40px 20px;
@@ -1173,7 +1173,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;700&display=swap');
   
   #seccion-resumen-forma {
-      background-color: #4f8b91;
+      background-color: #3e757a;
       padding: 50px 20px;
       color: #ffffff;
       text-align: center;
@@ -1978,3 +1978,15 @@
       font-size: 14px;
     }
   }
+
+  
+  .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

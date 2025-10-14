@@ -11,9 +11,15 @@
     <meta property="og:image" content="IMAGENES/PortadaManifiesta.webp">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://libro.manifiestatuabundancia.shop/">
-    <link rel="stylesheet" href="styles.css">
+    <meta name="keywords" content="manifestar abundancia, manifiesta tu abundancia, ley de atracción, desarrollo personal, dinero, amor, salud, espiritualidad, ebook, crecimiento personal">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="preload" href="styles.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="preguntas.js" defer></script>
+    <link rel="preload" as="image" href="IMAGENES/fondo_sec1.webp">
 
 
 </head>
@@ -28,32 +34,10 @@
     🌟 ¡Promoción por tiempo limitado! Termina en <span class="timer" id="timer">15:00</span>
     </div>
 
-    <script>
-        // Tiempo inicial (15 minutos = 900 segundos)
-        let tiempo = 15 * 60;
-
-        const timer = document.getElementById("timer");
-
-        const countdown = setInterval(() => {
-        const minutos = Math.floor(tiempo / 60);
-        const segundos = tiempo % 60;
-
-        // Mostrar con formato 00:00
-        timer.textContent = `${String(minutos).padStart(2, '0')}:${String(segundos).padStart(2, '0')}`;
-
-        // Cuando termina
-        if (tiempo <= 0) {
-            clearInterval(countdown);
-            document.querySelector(".promo-timer").textContent = "⏰ ¡La promoción ha finalizado!";
-        }
-
-        tiempo--;
-        }, 1000);
-    </script>
-
 
     <!-- Sección 1 -->
     <div id="seccion1">
+
         <div class="contenedor-transparente-interno">
         <div class="contenido-principal">
             <div class="texto-principal">
@@ -494,6 +478,28 @@
     <!-- Botones - Redes Sociales -->
 
   </main>
+  <script>
+        // Tiempo inicial (15 minutos = 900 segundos)
+        let tiempo = 15 * 60;
+
+        const timer = document.getElementById("timer");
+
+        const countdown = setInterval(() => {
+        const minutos = Math.floor(tiempo / 60);
+        const segundos = tiempo % 60;
+
+        // Mostrar con formato 00:00
+        timer.textContent = `${String(minutos).padStart(2, '0')}:${String(segundos).padStart(2, '0')}`;
+
+        // Cuando termina
+        if (tiempo <= 0) {
+            clearInterval(countdown);
+            document.querySelector(".promo-timer").textContent = "⏰ ¡La promoción ha finalizado!";
+        }
+
+        tiempo--;
+        }, 1000);
+    </script>
 </body>
 
 <footer>

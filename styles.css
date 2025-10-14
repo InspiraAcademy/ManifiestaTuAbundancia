@@ -69,7 +69,7 @@
   
   /* === SECCIÓN 1 === */
   #seccion1 {
-      background-image: url('IMAGENES/fondo_sec1.png');
+      background-image: url('IMAGENES/fondo_sec1.webp');
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -331,47 +331,8 @@
     color: #486572;
   }
   
-  /* Botón de descarga - Sección 2 */
-  #seccion2 .btn-redirigir-2 {
-    background-color: #EFB810;
-    color: #ffffff;
-    padding: 15px 105px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 20px;
-    transition: background-color 0.3s;
-    text-decoration: none; /* NUEVO */
-    display: inline-flex; /* NUEVO */
-    align-items: center;
-    justify-content: center;
-  }
   
-  #seccion2 .btn-redirigir-2:hover {
-    background-color: #db8f01;
-  }
   
-  /*.contenido-resumen-forma-v2 a {
-    background-color: #f1c500;
-    color: #ffffff;
-     /*padding: 15px 40px; AJUSTADO 
-     border: none;
-     border-radius: 10px;
-     cursor: pointer;
-     font-size: 1.1em; /* CAMBIADO de 20px a em 
-     transition: background-color 0.3s;
-     text-decoration: none;
-     display: inline-flex;
-     align-items: center;
-     justify-content: center;
-     font-weight: 700; /* NUEVO 
-     text-transform: uppercase; /* NUEVO 
-   }
-   
-   .contenido-resumen-forma-v2 a:hover {
-     background-color: #db8f01;
-   }
-   NUEVO: Fix para el botón del resumen */
 
   
   /* === SECCIÓN 2 === */

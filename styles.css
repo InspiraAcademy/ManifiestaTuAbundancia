@@ -728,7 +728,7 @@
           padding: 0 15px; /* AJUSTADO */
           margin-bottom: 20px;
       }
-      .columna-izquierda-t h1 {
+      .columna-izquierda-t h2 {
           font-size: 1.8em; /* AJUSTADO */
           margin-bottom: 10px;
       }
@@ -815,7 +815,7 @@
           transform: translateY(60px) scale(0.9);
       }
   
-      .columna-izquierda-t h1 {
+      .columna-izquierda-t h2 {
           font-size: 1.6em;
       }
   }

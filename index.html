@@ -17,7 +17,8 @@
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="preload" href="styles.css" as="style" onload="this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="styles.css"></noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
     <script src="preguntas.js" defer></script>
     <link rel="preload" as="image" href="IMAGENES/fondo_sec1.webp">
 
@@ -37,9 +38,8 @@
 
     <!-- Sección 1 -->
     <div id="seccion1">
-
         <div class="contenedor-transparente-interno">
-        <div class="contenido-principal">
+        <div class="contenido-principal" fetchpriority="high">
             <div class="texto-principal">
                 <h2 class="subtitulo">Para aquellos que anhelan una vida sin límites...</h2>
                 <h1 class="titulo-principal">Sí, MERECES todo lo que sueñas, pero te han enseñado los métodos incorrectos...</h1>
